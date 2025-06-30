@@ -1,0 +1,21 @@
+
+.container{
+    box-sizing: border-box;
+    width: 40%;
+    height: 100px;
+    background-color: pink;
+    display: table;
+    margin: auto;
+}
+
+
+.section{
+    width: calc(100% / 3);
+    height: inherit;
+    border: 2px solid black;
+    display: table-cell;
+}
+
+h1{
+    text-align: center;
+}
