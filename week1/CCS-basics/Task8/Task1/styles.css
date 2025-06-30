@@ -1,0 +1,15 @@
+h1{
+    color:darkblue;
+    text-align: center;
+    text-decoration: underline  ;
+}
+h2{
+    color: turquoise;
+}
+hr{
+    border-width: thin;
+}
+.hr-style{
+    border-width: thin;
+    border-block-color: turquoise;
+}
