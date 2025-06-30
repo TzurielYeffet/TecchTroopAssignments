@@ -13,3 +13,6 @@ hr{
     border-width: thin;
     border-block-color: turquoise;
 }
+body{
+    background-color: lightgray;
+}
