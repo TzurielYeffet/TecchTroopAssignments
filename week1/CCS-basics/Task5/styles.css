@@ -1,0 +1,11 @@
+table{
+    background-color: lightgrey;
+    border-spacing: 0px;
+    box-sizing: content-box;
+}
+td{
+    background-color: #84fc84 ;
+    padding: 5px 10px;
+}
+tr{
+}

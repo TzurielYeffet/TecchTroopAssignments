@@ -1,0 +1,13 @@
+a{
+    background-color: rgb(51, 195, 214);
+    width:fit-content;
+    height: fit-content;
+    color: brown;
+    border: 5px solid rgb(51, 195, 214);
+    cursor: pointer;
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+
+}

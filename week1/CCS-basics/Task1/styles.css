@@ -1,0 +1,17 @@
+#one{
+   font-size:50px ;
+   color: aqua;
+   font-family: 'Courier New', Courier, monospace; 
+}
+
+#two{
+    font-size: 20px;
+    color: brown;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#three{
+    font-size: 100px;
+    color: red;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
