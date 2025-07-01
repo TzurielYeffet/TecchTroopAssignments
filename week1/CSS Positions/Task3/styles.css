@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background-color: blueviolet;
+}
+
+span {
+  position: absolute;
+  font-weight: bold;
+}
+#money {
+  margin-left: 10px;
+  top: 0;
+  left: 0;
+}
+#time {
+  margin-right: 10px;
+  bottom: 0;
+  right: 0;
+}
+.graph {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+.line {
+  position: absolute;
+  bottom: 0;
+  margin: 5px;
+  background-color: darkgrey;
+  width: 7%;
+}
+
+#line-1 {
+  left: 0;
+  height: 10%;
+}
+#line-2 {
+  height: 60%;
+  margin-left: 15%;
+}
+#line-3 {
+  height: 80%;
+  margin-left: 30%;
+}
+#line-4 {
+  height: 70%;
+  margin-left: 45%;
+}
+#line-5 {
+  height: 60%;
+  margin-left: 60%;
+}
+#line-6 {
+  margin-left: 75%;
+  /* right: 0; */
+  height: 30%;
+}
