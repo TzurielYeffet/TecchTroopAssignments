@@ -1,0 +1,44 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+} 
+.container{
+    position: relative;
+    display: flex;
+    width:50%;
+    border: solid gray;
+    /* align-items: center; */
+ 
+}
+
+div.content{
+   width:50%;
+    height: 50px;
+    background-color:  mediumslateblue;
+    border:solid white;
+
+    /* margin:5px; */
+}
+
+.second-row{
+    width: 50%;
+    height: 50px;
+    margin: 5px;
+    background-color:mediumslateblue ;
+    flex:1    
+}
+.row{
+    display: flex;
+    margin-top: 10px;
+    /* justify-content:space-around; */
+    border: solid gray;
+
+
+}
+#two {
+    flex:2;
+}
+#three{
+    flex:2;
+}
