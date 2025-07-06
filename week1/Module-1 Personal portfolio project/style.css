@@ -168,11 +168,14 @@ li {
 .projects {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0rem 5rem;
 }
 .my-projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
     background: linear-gradient(
     90deg,
     rgba(241, 244, 248, 1) 0%,
@@ -180,9 +183,12 @@ li {
     rgba(231, 236, 242, 1) 100%
   );
 }
-.my-projects > h1 {
-  text-align: center;
+.title{
+    /* margin: auto; */
+  margin-bottom: 1rem;
+
 }
+
 .card {
   /* display: flex; */
   width: calc(100% / 3 - 10px);
