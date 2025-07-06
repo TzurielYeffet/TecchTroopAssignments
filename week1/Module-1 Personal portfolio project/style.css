@@ -6,14 +6,24 @@
   /* margin-left: 2rem; */
 }
 h1 {
+  color: #414b5c;
+
   font-size: 2.5rem;
 }
 h2 {
+  color: #687180;
   font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+  color: #717a88;
 }
 a {
   text-decoration: none;
   color: #aab3bf;
+}
+p{
+    color: #B3BBC6;
 }
 header {
   width: inherit;
@@ -84,31 +94,25 @@ li {
   position: relative;
   overflow: hidden;
 }
-.graph-line::before{
-    content: '';
-    height: 100%;
-    background: #1154ef;
-    border-radius: 4px;
-
+.graph-line::before {
+  content: "";
+  height: 100%;
+  background: #1154ef;
+  border-radius: 4px;
 }
 
-.graph-line:nth-child(1)::before{
-    width: 85%;
+.graph-line:nth-child(1)::before {
+  width: 85%;
 }
-.graph-line:nth-child(2)::before{
-    width: 90%;
+.graph-line:nth-child(2)::before {
+  width: 90%;
 }
-.graph-line:nth-child(3)::before{
-    width: 75%;
+.graph-line:nth-child(3)::before {
+  width: 75%;
 }
-.graph-line:nth-child(4)::before{
-    width: 80%;
+.graph-line:nth-child(4)::before {
+  width: 80%;
 }
-
-
-
-
-
 
 .skills-ul {
   display: flex;
@@ -133,8 +137,6 @@ li {
     rgba(235, 239, 245, 1) 62%,
     rgba(231, 236, 242, 1) 100%
   );
-  /* justify-content: space-around; */
-  /* padding-left: 1rem; */
 }
 
 .content {
@@ -142,15 +144,12 @@ li {
   color: #a4acba;
   /* text-align: center; */
   padding: 0rem 5rem;
-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: space-between;
 }
-.content > h1 {
-  color: #414b5c;
-}
+
 .image {
   display: flex;
   width: 200px;
@@ -166,12 +165,51 @@ li {
   margin-right: 5rem;
 }
 
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0rem 5rem;
+}
+.my-projects > h1 {
+  text-align: center;
+}
+.card {
+  /* display: flex; */
+  width: calc(100% / 3 - 10px);
+  border: #e8edf2 1px solid;
+  border-radius: 5px;
+}
+
+.card-image {
+  background-color: #e2e8f0;
+  padding:5rem;
+  text-align: center;
+}
+.card-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: (100% - 10px);
+}
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1154ef;
   height: 37px;
-  width: 100px;
+  width: fit-content;
   border-radius: 4.5px;
   border: 1px solid;
   color: #99b5f1;
   padding: 1rem;
+}
+.projects > .card > .card-content >  button {
+    padding:1rem ;
+  color: #efcf9c;
+  background-color: #f99f0a;
+  border: 1px #faa731 solid;
+  border-radius: 2.25px;
+  font-weight: 400;
 }
