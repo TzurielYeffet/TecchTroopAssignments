@@ -1,0 +1,5 @@
+Ex1 = O(n)
+Ex2 = O(log2)
+Ex3 = O(1)
+Ex4 = O(sg * questionNumber )
+Ex5 = O(n) 
