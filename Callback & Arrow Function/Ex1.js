@@ -12,4 +12,4 @@ function pushPull(func){
 
 pushPull(push) //should print "pushing it!"
 pushPull(pull) //should print "pulling it!"
-
+    
