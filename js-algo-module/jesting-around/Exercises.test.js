@@ -1,3 +1,4 @@
+const { add } = require("./code");
 const Exercises = require("./Exercises");
 
 describe("isEven", () => {
@@ -47,4 +48,13 @@ describe("validate", () => {
     const arr = [1, 2, 3];
     expect(ex.validate(arr)).toEqual({ error: "Need at least one boolean" });
   });
+});
+test("push functions should be called", () => {
+  let x = ["food", "item", "location"];
+  let y = ["cherry", "lightbulb", "Tazmania"];
+  const ex = new Exercises();
+  const spy = jest.spyOn(Array.prototype, "push");
+    ex.add(x,y);
+  expect(spy).toHaveBeenCalled();
+  spy.mockRestore();
 });

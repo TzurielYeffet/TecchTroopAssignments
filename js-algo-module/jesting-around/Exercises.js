@@ -34,6 +34,10 @@ class Exercises {
     }
     return false;
   }
+  add(x, y) {
+    let stuff = [];
+    stuff.push(x, y);
+  }
 }
 
 module.exports = Exercises;
