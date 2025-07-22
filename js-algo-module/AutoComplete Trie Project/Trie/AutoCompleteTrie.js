@@ -26,9 +26,26 @@ class AutoCompleteTrie {
     return node.endOfWord;    
   }
 
-  predictWords(prefix) {}
+  predictWords(prefix) {
+    let node = this;
+    for(let ch of prefix){
+        if(!node.children[ch]){
+            return []
+        }
+        node=node.children[ch]
+    }
+    let predictArr = []
+    node._allWordsHelper(prefix,node,predictArr)
+    return predictArr;
+  }
   _getRemainingTree(prefix, node) {}
-  _allWordsHelper(prefix, node, allWords) {}
+  _allWordsHelper(prefix, node, allWords) {
+    if(node.endOfWord){
+        allWords.push(prefix)
+    }
+    for(let ch of node.children)
+    node.children[ch]._allWordsHelper(prefix+ch,node,allWords)
+  }
 }
 
 module.exports = AutoCompleteTrie;
