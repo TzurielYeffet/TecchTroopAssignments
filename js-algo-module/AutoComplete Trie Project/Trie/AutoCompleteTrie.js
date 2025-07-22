@@ -1,26 +1,25 @@
-class AutoCompleteTrie{
-    constructor(value){
-        this. value = value;
-        this.children = {};
-        this.endOfWord = false;
-    }
+class AutoCompleteTrie {
+  constructor(value) {
+    this.value = value;
+    this.children = {};
+    this.endOfWord = false;
+  }
 
-    addWord(word){
-      
+  addWord(word) {
+    let node = this;
+    for (let ch of word) {
+      if (!node.children[ch]) {
+        node.children[ch] = new AutoCompleteTrie(ch);
+      }
+      node = node.children[ch];
     }
-    findWord(){
+    node.endOfWord=true
+  }
+  findWord() {}
 
-    }
-
-    predictWords(prefix){
-
-    }
-    _getRemainingTree(prefix, node){
-
-    }
-    _allWordsHelper(prefix, node, allWords){
-
-    }
+  predictWords(prefix) {}
+  _getRemainingTree(prefix, node) {}
+  _allWordsHelper(prefix, node, allWords) {}
 }
 
 module.exports = AutoCompleteTrie;
