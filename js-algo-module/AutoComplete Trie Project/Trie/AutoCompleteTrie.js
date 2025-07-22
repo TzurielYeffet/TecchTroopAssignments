@@ -13,9 +13,18 @@ class AutoCompleteTrie {
       }
       node = node.children[ch];
     }
-    node.endOfWord=true
+    node.endOfWord=true;
   }
-  findWord() {}
+  findWord(word) {
+    let node = this;
+    for(let ch of word){
+        if(!node.children[ch]){
+            return flase;
+        }
+        node = node.children[ch];
+    }
+    return node.endOfWord;    
+  }
 
   predictWords(prefix) {}
   _getRemainingTree(prefix, node) {}
