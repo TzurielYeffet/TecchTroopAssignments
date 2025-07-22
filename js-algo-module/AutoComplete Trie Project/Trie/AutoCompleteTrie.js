@@ -1,5 +1,5 @@
 class AutoCompleteTrie {
-  constructor(value) {
+  constructor(value = "") {
     this.value = value;
     this.children = {};
     this.endOfWord = false;
@@ -13,38 +13,38 @@ class AutoCompleteTrie {
       }
       node = node.children[ch];
     }
-    node.endOfWord=true;
+    node.endOfWord = true;
   }
   findWord(word) {
     let node = this;
-    for(let ch of word){
-        if(!node.children[ch]){
-            return flase;
-        }
-        node = node.children[ch];
+    for (let ch of word) {
+      if (!node.children[ch]) {
+        return false;
+      }
+      node = node.children[ch];
     }
-    return node.endOfWord;    
+    return node.endOfWord;
   }
 
   predictWords(prefix) {
     let node = this;
-    for(let ch of prefix){
-        if(!node.children[ch]){
-            return []
-        }
-        node=node.children[ch]
+    for (let ch of prefix) {
+      if (!node.children[ch]) {
+        return [];
+      }
+      node = node.children[ch];
     }
-    let predictArr = []
-    node._allWordsHelper(prefix,node,predictArr)
+    let predictArr = [];
+    node._allWordsHelper(prefix, node, predictArr);
     return predictArr;
   }
   _getRemainingTree(prefix, node) {}
   _allWordsHelper(prefix, node, allWords) {
-    if(node.endOfWord){
-        allWords.push(prefix)
+    if (node.endOfWord) {
+      allWords.push(prefix);
     }
-    for(let ch of node.children)
-    node.children[ch]._allWordsHelper(prefix+ch,node,allWords)
+    for (let ch in node.children)
+      this._allWordsHelper(prefix + ch, node.children[ch], allWords);
   }
 }
 
