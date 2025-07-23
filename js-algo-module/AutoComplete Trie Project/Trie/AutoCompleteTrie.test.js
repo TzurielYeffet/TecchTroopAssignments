@@ -1,5 +1,4 @@
-const AutoCompleteTrie = require("./AutoCompleteTrie")
-
+const AutoCompleteTrie = require("./AutoCompleteTrie");
 
 describe("AutoCompleteTrie", () => {
   let trie;
@@ -8,31 +7,17 @@ describe("AutoCompleteTrie", () => {
     trie = new AutoCompleteTrie();
   });
 
-  
-test("addNode method should add a new node to the trie",()=>{
-    let trie = new AutoCompleteTrie();
-    let value = "cat"
-    trie.addWord(value);
-    expect(trie.children['c'].value).toBe('c');
-});
-
-test("findWord should return true if word exists in the tree",()=>{
-    let trie = new AutoCompleteTrie();
-    let value = "cat"
-    trie.addWord(value);
-
-    expect(trie.findWord(value)).toBeTruthy();
-})
-
-test("predictWords should return an array of all possible completions if exists, outherwize return empty array",()=>{
-     let trie = new AutoCompleteTrie();
+  test("addWord should add a new node to the trie", () => {
     trie.addWord("cat");
-    trie.addWord("car");
-    trie.addWord("can");
+    expect(trie.children['c'].value).toBe('c');
+    expect(trie.children['c'].children['a'].value).toBe('a');
+    expect(trie.children['c'].children['a'].children['t'].endOfWord).toBe(true);
+  });
 
-    expect(trie.predictWords('ca')).toEqual(['cat',"car","can"]);
-    expect(trie.predictWords('br')).toEqual([]);
-})
+  test("findWord should return true if word exists in the tree", () => {
+    trie.addWord("cat");
+    expect(trie.findWord("cat")).toBe(true);
+  });
 
   test("findWord should return false for a prefix only", () => {
     trie.addWord("cat");
@@ -44,24 +29,40 @@ test("predictWords should return an array of all possible completions if exists,
     expect(trie.findWord("dog")).toBe(false);
   });
 
-  test("predictWords should return all completions for a given prefix", () => {
+  test("predictWords should return array of completions (sorted by frequency)", () => {
     trie.addWord("cat");
     trie.addWord("car");
     trie.addWord("can");
-    trie.addWord("dog");
+    trie.use("cat"); 
+    trie.use("cat"); 
+    trie.use("car"); 
 
-    const result = trie.predictWords("ca").sort(); 
-    expect(result).toEqual(["can", "car", "cat"].sort());
+    const result = trie.predictWords("ca").map(w => w.word);
+    expect(result).toEqual(["cat", "car", "can"]);
   });
 
-  test("predictWords should return an empty array for unknown prefix", () => {
+  test("predictWords should return empty array for unknown prefix", () => {
     trie.addWord("cat");
     trie.addWord("dog");
+
     expect(trie.predictWords("br")).toEqual([]);
   });
 
-  test("predictWords should return full words for full match prefix", () => {
+  test("predictWords should return full word if prefix matches a word", () => {
     trie.addWord("cat");
-    expect(trie.predictWords("cat")).toEqual(["cat"]);
+    const result = trie.predictWords("cat").map(w => w.word);
+    expect(result).toEqual(["cat"]);
+  });
+
+  test("use(word) should increment frequency for a valid word", () => {
+    trie.addWord("cat");
+    expect(trie.use("cat")).toBe(1);
+    expect(trie.use("cat")).toBe(2);
+  });
+
+  test("use(word) should return 0 for a non-existing word", () => {
+    trie.addWord("cat");
+    expect(trie.use("dog")).toBe(0);
+    expect(trie.use("ca")).toBe(0); 
   });
 });

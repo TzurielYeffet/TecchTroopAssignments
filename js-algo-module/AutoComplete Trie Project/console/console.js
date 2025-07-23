@@ -1,12 +1,3 @@
-// Display a welcome message
-// Show available commands:
-// add <word> - Add a word to the dictionary
-// find <word> - Check if word exists
-// complete <prefix> - Show all completions for prefix
-// help - Show commands
-// exit - Quit the application
-// Handle user input in a loop
-// Provide clear feedback for each operation
 const readline = require("readline");
 const AutoCompleteTrie = require("../Trie/AutoCompleteTrie");
 
@@ -41,11 +32,17 @@ const getInput = function () {
           "Commands:\n add <word>      - Add word to dictionary\nfind <word>     - Check if word exists\ncomplete <prefix> - Get completions\nhelp           - Show this message\nexit           - Quit program"
         );
         break;
-      case "complete":
-        let result = trie.predictWords(value);
-        if (result.length > 0) {
-          console.log(`Suggestions for '${value}': ${[...result].join(", ")}`);
-        }
+        case "complete":
+          let result = trie.predictWords(value);
+          if (result.length > 0) {
+            console.log(`Suggestions for ${value}:` + result.map(({word,frequency}) => `${word} (${frequency})`));
+          }
+          break;
+
+      case "use":
+        let freq = trie.use(value);
+        console.log(`Incremented usage for '${value}' (now ${freq});`);
+
         break;
       case "exit":
         rl.close();
