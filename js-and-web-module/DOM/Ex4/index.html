@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" id = "form">
+        <div class="top-div">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            name="name"
+          required/>
+        </div >
+        <div class="inner-div">
+          <div class ="middle">
+            <label for="salary">Desired Salary</label>
+            <input
+              type="number"
+              name="salary"
+              placeholder="E.g. 12,000"
+              id="salary"
+            />
+          </div>
+          <div class ="middle">
+            <label for="birthday">Birthday</label>
+            <input
+              type="date"
+              id="birthday"
+              name="birthday"
+              placeholder="E.g. 01/01/1990"
+            />
+          </div>
+        </div>
+        <div class="bottom-div">
+          <label for="phone">Phone</label>
+          <input type="text" name="phone" id="phone"/>
+        </div>
+        <div class="btn">
+            <button id="btn" type="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
