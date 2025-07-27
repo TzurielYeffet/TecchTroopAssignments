@@ -1,0 +1,12 @@
+{
+  "name": "autocomplete-trie-web-ui",
+  "version": "1.0.0",
+  "type":"module",
+  "description": "UI for Auto-complete trie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tzuriel yeffet",
+  "license": "ISC"
+}

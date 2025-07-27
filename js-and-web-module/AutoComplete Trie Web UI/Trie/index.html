@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="add-word">
+        <input
+          type="text"
+          id="word"
+          placeholder="Enter a word to add to the dictionary"
+        />
+        <button type="submit" id="btn">Add Word</button>
+      </div>
+      <div class="word-suggestion">
+        <input
+          type="text"
+          placeholder="Start typing to see suggestions..."
+          id="suggestion"
+        />
+        <div class="suggestion" id="suggestion-div">
+          <ul id="suggestion-list">
+          </ul>
+        </div>
+      </div>
+      <div class="words-info">
+        <h1 id="counter">0</h1>
+        <div class="word-in-dict">Words in Dictionary</div>
+      </div>
+    </div>
+
+    <script src="..\View\index.mjs" type="module"></script>
+  </body>
+</html>
