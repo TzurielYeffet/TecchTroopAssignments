@@ -1,5 +1,5 @@
 //Ex5
-const api_key = "amxAoqHIkFl406jWQ4wUcRmbA145quC7";
+const api_key = "";
 
 console.log("script loaded");
 
